@@ -58,18 +58,19 @@ ul{list-style:none}
    PRELOADER
    ============================================================ */
 #loader{
-  position:fixed;inset:0;z-index:120;background:var(--bg);color:var(--ink);
+  position:fixed;inset:0;z-index:120;color:var(--ink);
   display:grid;place-items:center;text-align:center;
+  background:radial-gradient(120% 90% at 50% 8%,#fffdf7,#f3ead8 62%,#e3d6bd);
   transition:opacity .9s ease,visibility .9s;
 }
 #loader.done{opacity:0;visibility:hidden}
 #loader .lg-logo{
-  width:clamp(84px,14vw,120px);height:auto;margin-inline:auto;
-  filter:drop-shadow(0 0 32px rgba(216,185,92,.4));
+  width:clamp(90px,15vw,130px);height:auto;margin-inline:auto;
+  filter:drop-shadow(0 10px 34px rgba(120,80,10,.35));
   animation:lgfade 1.6s var(--ease) forwards;
 }
 @keyframes lgfade{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
-#loader .bar{width:min(300px,60vw);height:1px;background:#2a2316;margin:1.8rem auto 0;overflow:hidden}
+#loader .bar{width:min(300px,60vw);height:2px;background:rgba(216,185,92,.3);margin:1.8rem auto 0;overflow:hidden;border-radius:2px}
 #loader .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-dk),var(--gold-hi));animation:loadbar 1.5s var(--ease) forwards}
 @keyframes loadbar{to{width:100%}}
 
