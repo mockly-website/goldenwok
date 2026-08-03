@@ -126,6 +126,12 @@ var io=new IntersectionObserver(function(es){
   es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
 },{threshold:.15,rootMargin:"0px 0px -40px 0px"});
 document.querySelectorAll(".reveal,[data-reveal]").forEach(function(el){ io.observe(el); el.classList.add("reveal"); });
+setTimeout(function(){
+  document.querySelectorAll(".reveal:not(.in)").forEach(function(el){
+    var r=el.getBoundingClientRect();
+    if(r.top<window.innerHeight&&r.bottom>0) el.classList.add("in");
+  });
+},1500);
 
 /* ================= header / progress ================= */
 var prog=document.getElementById("progress"), hd=document.getElementById("header");
@@ -146,7 +152,8 @@ burger.addEventListener("click",function(){
   var open=mm.classList.toggle("open");
   burger.classList.toggle("active",open);
   burger.setAttribute("aria-expanded",open);
-  mm.querySelectorAll("a").forEach(function(a){ a.addEventListener("click",function(){ mm.classList.remove("open"); burger.classList.remove("active"); }); });
+  document.body.style.overflow=open?"hidden":"";
+  mm.querySelectorAll("a").forEach(function(a){ a.addEventListener("click",function(){ mm.classList.remove("open"); burger.classList.remove("active"); document.body.style.overflow=""; }); });
 });
 var links=document.querySelectorAll("nav a");
 var spy=new IntersectionObserver(function(es){
