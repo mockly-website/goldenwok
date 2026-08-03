@@ -29,10 +29,10 @@ body{
   overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
 ::-webkit-scrollbar{width:11px}
-::-webkit-scrollbar-track{background:#0a0806}
-::-webkit-scrollbar-thumb{background:#2c2313;border-radius:6px;border:2px solid #0a0806}
+::-webkit-scrollbar-track{background:#0d0906}
+::-webkit-scrollbar-thumb{background:#2c2313;border-radius:6px;border:2px solid #0d0906}
 ::-webkit-scrollbar-thumb:hover{background:var(--gold-dk)}
-*{scrollbar-width:thin;scrollbar-color:#2c2313 #0a0806}
+*{scrollbar-width:thin;scrollbar-color:#2c2313 #0d0906}
 ::selection{background:var(--gold);color:#160d02}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -80,7 +80,7 @@ ul{list-style:none}
 }
 @keyframes hdIn{from{transform:translateY(-100%);opacity:0}to{transform:none;opacity:1}}
 #header::before{
-  content:"";position:absolute;inset:0;opacity:1;transition:.4s;pointer-events:none;
+  content:"";position:absolute;inset:0;pointer-events:none;
   background:rgba(247,241,231,.94);backdrop-filter:blur(18px) saturate(1.15);
   border-bottom:1px solid rgba(74,58,28,.14);
 }
@@ -130,7 +130,6 @@ nav a:hover::after,nav a.active::after{width:100%}
 }
 .mmenu.open a{opacity:1;transform:none}
 .mmenu a small{font-family:var(--font-body);font-size:.8rem;color:var(--gold);letter-spacing:.3em}
-.mmenu a small b{font-weight:400;font-size:6px;color:var(--red)}
 .mmenu .mm-foot{margin-top:2rem;color:#6f6755;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase}
 
 /* ============================================================
@@ -219,7 +218,6 @@ nav a:hover::after,nav a.active::after{width:100%}
 @keyframes tick{to{transform:translateX(-50%)}}
 .ticker span{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mut);padding-right:3rem}
 .ticker span b{color:var(--gold)}
-.ticker .star{color:var(--red)}
 
 /* ============================================================
    SEZIONE BASE
@@ -388,7 +386,7 @@ nav a:hover::after,nav a.active::after{width:100%}
 .quote .who::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);flex:none}
 
 /* ============================================================
-   ORARI / BIGLIETTERIA
+   ORARI / LOCATION
    ============================================================ */
 .biz .grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(2rem,5vw,4rem);align-items:start}
 .biz{background:var(--bg-soft)}
@@ -472,7 +470,7 @@ nav a:hover::after,nav a.active::after{width:100%}
 @media(min-width:961px){.call-fab{display:none}}
 
 /* ============================================================
-   BOX OFFICE / CTA FINALE
+   CTA FINALE / PRENOTAZIONI
    ============================================================ */
 .boxo{
   text-align:center;padding:clamp(4.5rem,9vw,7rem) var(--padx);
@@ -482,14 +480,12 @@ nav a:hover::after,nav a.active::after{width:100%}
 .boxo .sec-head{max-width:none;margin-inline:auto;margin-bottom:1.4rem;display:flex;flex-direction:column;align-items:center}
 .boxo .sec-head .eyebrow{margin-inline:auto}
 .boxo h2{font-size:clamp(2.2rem,6vw,4rem)}
-.boxo h2 .gold{color:var(--gold-hi)}
 .boxo-sub{max-width:52ch;margin:0 auto 1.2rem;color:var(--mut);font-size:.95rem;line-height:1.7}
 .boxo .phone{font-family:var(--font-display);font-size:clamp(1.7rem,4.6vw,3rem);color:var(--gold-hi);display:inline-flex;align-items:center;gap:1rem;margin:1.4rem 0 1.8rem}
 .boxo-cta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
 .socials{display:flex;gap:1rem;justify-content:center;margin-top:2.4rem;flex-wrap:wrap}
 .socials a{border:1px solid var(--line);padding:.7rem 1.2rem;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);border-radius:999px;transition:.3s}
 .socials a:hover{color:var(--gold);border-color:var(--gold)}
-.socials a svg{vertical-align:-2px;margin-right:.5rem}
 
 /* ============================================================
    FOOTER
@@ -503,8 +499,10 @@ footer p,footer a{font-size:.82rem;color:var(--mut);line-height:1.9;display:bloc
 footer a:hover{color:var(--gold-hi)}
 footer .brand-b{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
 footer .brand-b .brand-logo{width:auto;height:40px;display:block;filter:drop-shadow(0 2px 12px rgba(216,185,92,.35))}
+footer .brand-b .bt{line-height:1.2}
+footer .brand-b b{font-family:var(--font-display);letter-spacing:.2em;color:var(--ink)}
+footer .brand-b .bt span{color:var(--gold);font-size:.66rem;letter-spacing:.32em;text-transform:uppercase}
 footer .legal{border-top:1px dashed var(--line);margin-top:3rem;padding-top:1.6rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.68rem;letter-spacing:.14em;color:var(--mut-2);text-transform:uppercase;max-width:1400px;margin-inline:auto}
-footer .legal a:hover{color:var(--gold)}
 
 #toTop{
   position:fixed;right:1.3rem;bottom:2.6rem;z-index:45;width:46px;height:46px;border-radius:50%;

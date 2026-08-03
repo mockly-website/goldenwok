@@ -148,13 +148,19 @@ document.getElementById("toTop").addEventListener("click",function(){ window.scr
 
 /* ================= menu mobile + scroll-spy ================= */
 var burger=document.getElementById("burger"), mm=document.getElementById("mmenu");
+function closeMM(){
+  mm.classList.remove("open");
+  burger.classList.remove("active");
+  burger.setAttribute("aria-expanded","false");
+  document.body.style.overflow="";
+}
 burger.addEventListener("click",function(){
   var open=mm.classList.toggle("open");
   burger.classList.toggle("active",open);
   burger.setAttribute("aria-expanded",open);
   document.body.style.overflow=open?"hidden":"";
-  mm.querySelectorAll("a").forEach(function(a){ a.addEventListener("click",function(){ mm.classList.remove("open"); burger.classList.remove("active"); document.body.style.overflow=""; }); });
 });
+mm.querySelectorAll("a").forEach(function(a){ a.addEventListener("click",closeMM); });
 var links=document.querySelectorAll("nav a");
 var spy=new IntersectionObserver(function(es){
   es.forEach(function(e){
