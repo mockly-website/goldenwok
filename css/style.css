@@ -180,6 +180,7 @@ nav a:hover::after,nav a.active::after{width:100%}
   text-shadow:0 3px 18px rgba(0,0,0,.9),0 1px 3px rgba(0,0,0,.7);
 }
 .hero .sub b{color:var(--gold-hi);font-weight:700}
+.hero .sub .short{display:none}
 .hero .meta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.2rem}
 .hero .chip{
   display:inline-flex;align-items:center;gap:.55rem;font-size:.68rem;letter-spacing:.2em;
@@ -519,10 +520,16 @@ footer .legal{border-top:1px dashed var(--line);margin-top:3rem;padding-top:1.6r
   :root{--padx:2rem}
 }
 @media(max-width:560px){
+  .hero{align-items:flex-start}
+  .hero-inner{text-align:center;padding-top:calc(var(--header-h)+2.4rem)}
+  .hero h1{text-align:center;font-size:clamp(2.4rem,12.5vw,3rem);letter-spacing:.04em}
+  .hero .sub{margin-inline:auto}
+  .hero .sub .long{display:none}
+  .hero .sub .short{display:inline}
+  .hero .meta{justify-content:center}
   .hero-cta{flex-direction:column;align-items:center;margin-top:2.4rem}
   .hero-cta .btn{width:auto;min-width:min(100%,280px);justify-content:center;padding:1rem 2.2rem;font-size:.8rem}
   .hero .eyebrow{width:100%;justify-content:center;text-align:center;letter-spacing:.12em;font-size:.56rem;line-height:1.9}
-  .hero h1{font-size:clamp(2.4rem,12.5vw,3rem);letter-spacing:.04em}
   .sec-head .eyebrow{font-size:.56rem;letter-spacing:.28em}
   .mani-figure .photo{aspect-ratio:4/3}
   .map iframe{height:220px}
