@@ -63,11 +63,15 @@ ul{list-style:none}
   transition:opacity .9s ease,visibility .9s;
 }
 #loader.done{opacity:0;visibility:hidden}
-#loader .lg{font-family:var(--font-display);font-size:clamp(1.6rem,6vw,3rem);letter-spacing:.35em;text-indent:.35em;color:var(--gold);text-transform:uppercase}
+#loader .lg-logo{
+  width:clamp(84px,14vw,120px);height:auto;margin-inline:auto;
+  filter:drop-shadow(0 0 32px rgba(216,185,92,.4));
+  animation:lgfade 1.6s var(--ease) forwards;
+}
+@keyframes lgfade{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
 #loader .bar{width:min(300px,60vw);height:1px;background:#2a2316;margin:1.8rem auto 0;overflow:hidden}
 #loader .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-dk),var(--gold-hi));animation:loadbar 1.5s var(--ease) forwards}
 @keyframes loadbar{to{width:100%}}
-#loader .cnt{margin-top:1rem;font-size:.7rem;letter-spacing:.5em;color:var(--mut)}
 
 /* ============================================================
    HEADER

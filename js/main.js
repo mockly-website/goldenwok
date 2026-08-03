@@ -21,17 +21,10 @@ var DATA = {
 };
 
 /* ================= loader ================= */
-var labels=["ACCENSIONE","REGIA","SET","FUOCO"];
-var li=0, lt=setInterval(function(){
-  li=(li+1)%labels.length;
-  var el=document.getElementById("lbl");
-  if(el) el.textContent=labels[li];
-},420);
 window.addEventListener("load",function(){
-  clearInterval(lt);
   setTimeout(function(){ document.getElementById("loader").classList.add("done"); },900);
 });
-setTimeout(function(){ clearInterval(lt); document.getElementById("loader").classList.add("done"); },2600);
+setTimeout(function(){ document.getElementById("loader").classList.add("done"); },2600);
 
 /* ================= ticker ================= */
 (function(){
