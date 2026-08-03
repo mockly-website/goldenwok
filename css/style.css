@@ -520,6 +520,8 @@ footer .brand-b .bt{line-height:1.2}
 footer .brand-b b{font-family:var(--font-display);letter-spacing:.2em;color:var(--ink)}
 footer .brand-b .bt span{color:var(--gold);font-size:.66rem;letter-spacing:.32em;text-transform:uppercase}
 footer .legal{border-top:1px dashed var(--line);margin-top:3rem;padding-top:1.6rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.68rem;letter-spacing:.14em;color:var(--mut-2);text-transform:uppercase;max-width:1400px;margin-inline:auto}
+footer .legal a{color:var(--gold);text-transform:none;letter-spacing:.02em;display:inline}
+footer .legal a:hover{color:var(--gold-hi)}
 
 #toTop{
   position:fixed;right:1.3rem;bottom:2.6rem;z-index:45;width:46px;height:46px;border-radius:50%;
@@ -561,7 +563,31 @@ footer .legal{border-top:1px dashed var(--line);margin-top:3rem;padding-top:1.6r
   .call-fab{padding:.8rem 1.15rem;font-size:.68rem}
 }
 
-/* topper HTML default */
+/* ---------- topper HTML default ---------- */
+
+/* ----- MOCKLY WATERMARK ----- */
+.mockly-watermark{
+  position:fixed;inset:0;z-index:99999;pointer-events:none;
+  display:flex;align-items:center;justify-content:center
+}
+.mockly-watermark-inner{
+  font-family:monospace;
+  font-size:clamp(5rem,18vw,14rem);
+  font-weight:700;
+  letter-spacing:clamp(12px,4vw,40px);
+  color:rgba(216,185,92,.04);
+  text-transform:uppercase;user-select:none;
+  transform:rotate(-20deg);
+  text-shadow:0 0 30px rgba(216,185,92,.02);
+  animation:watermarkFade 3s ease-in-out infinite;
+  text-align:center;line-height:1.1
+}
+.mockly-watermark-sub{
+  display:block;font-size:clamp(.8rem,2.5vw,1.5rem);
+  letter-spacing:clamp(6px,1.5vw,16px);margin-top:6px;opacity:.6
+}
+@keyframes watermarkFade{0%,100%{opacity:1}50%{opacity:.6}}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s !important;animation-iteration-count:1 !important;transition-duration:.001s !important;scroll-behavior:auto !important}
   .reveal{opacity:1;transform:none}
