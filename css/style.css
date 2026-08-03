@@ -243,9 +243,16 @@ nav a:hover::after,nav a.active::after{width:100%}
    MANIFESTO / IL FILM
    ============================================================ */
 .manifesto{background:radial-gradient(80% 55% at 50% 0%,rgba(216,185,92,.055),transparent 62%),var(--bg)}
-.mani-grid{display:grid;gap:clamp(2rem,5vw,3.5rem);align-items:center}
+.mani-grid{display:grid;gap:clamp(2.4rem,5vw,4rem);align-items:center;grid-template-columns:1.06fr .94fr}
+@media(max-width:960px){.mani-grid{grid-template-columns:1fr}}
 .mani-figure{position:relative}
-.mani-figure .photo{aspect-ratio:16/7;overflow:hidden;border-radius:14px;max-height:420px}
+.mani-figure::before{
+  content:"";position:absolute;z-index:0;pointer-events:none;
+  inset:1.3rem -1.3rem -1.3rem 1.3rem;
+  border:1px solid rgba(216,185,92,.35);border-radius:20px;
+}
+@media(max-width:960px){.mani-figure::before{inset:1rem -1rem -1rem 1rem}}
+.mani-figure .photo{position:relative;z-index:1;aspect-ratio:4/3;overflow:hidden;border-radius:16px;box-shadow:0 30px 70px rgba(0,0,0,.55)}
 .mani-figure .photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease)}
 .mani-figure:hover .photo img{transform:scale(1.06)}
 .capture{
@@ -255,10 +262,14 @@ nav a:hover::after,nav a.active::after{width:100%}
   border-radius:999px;
 }
 .capture .play{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
-.mani-copy .lead{font-family:var(--font-serif-soft);font-size:clamp(1.4rem,2.6vw,2rem);font-style:italic;line-height:1.4;color:var(--ink)}
+.mani-copy .lead{
+  font-family:var(--font-serif-soft);font-size:clamp(1.5rem,2.6vw,2.1rem);
+  font-style:italic;line-height:1.45;color:#f5eed9;
+  border-left:2px solid var(--gold);padding-left:1.3rem;
+}
 .mani-copy .lead .hl{color:var(--gold);font-style:normal}
-.mani-copy p{color:var(--mut);margin-top:1.3rem;font-size:.95rem;max-width:56ch}
-.mani-copy p b{color:var(--gold);font-weight:600}
+.mani-copy p{color:#bdb298;margin-top:1.3rem;font-size:.95rem;max-width:56ch}
+.mani-copy p b{color:var(--gold-hi);font-weight:600}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:3.2rem;border-radius:14px;overflow:hidden}
 .stat{padding:1.6rem 1.3rem;background:var(--bg-soft)}
 .stat b{font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.3rem);color:var(--gold-hi);font-weight:700;display:block}
@@ -532,7 +543,6 @@ footer .legal{border-top:1px dashed var(--line);margin-top:3rem;padding-top:1.6r
   .hero-cta .btn{width:auto;min-width:min(100%,280px);justify-content:center;padding:1rem 2.2rem;font-size:.8rem}
   .hero .eyebrow{width:100%;justify-content:center;text-align:center;letter-spacing:.12em;font-size:.56rem;line-height:1.9}
   .sec-head .eyebrow{font-size:.56rem;letter-spacing:.28em}
-  .mani-figure .photo{aspect-ratio:4/3}
   .map iframe{height:220px}
   .boxo-cta{flex-direction:column;align-items:center}
   .boxo-cta .btn{width:auto;min-width:min(100%,280px);justify-content:center;padding:1rem 2.2rem;font-size:.8rem}
