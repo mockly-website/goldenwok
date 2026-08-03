@@ -531,6 +531,8 @@ footer .legal{border-top:1px dashed var(--line);margin-top:3rem;padding-top:1.6r
 
 /* ---------- responsive refinements ---------- */
 @media(max-width:960px){
+  .hero{align-items:flex-start}
+  .hero-inner{padding-top:calc(var(--header-h)+3rem)}
   #toTop{bottom:6.2rem}
 }
 @media(max-width:640px){
