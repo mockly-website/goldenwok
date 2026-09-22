@@ -28,7 +28,7 @@ setTimeout(function(){ document.getElementById("loader").classList.add("done"); 
 
 /* ================= ticker ================= */
 (function(){
-  var words=['★ Golden Wok International Restaurant','Cucina cinese — giapponese — sushi','Buffet all-you-can-eat con bevande incluse','Pranzo 12:30 – 15:00','Cena 20:00 – 22:30','Sabato fino alle 23:00','Viale Marconi 216 · Cagliari'];
+  var words=["\u2605 Ristorante Il Dragone d'Oro",'Cucina cinese — giapponese — sushi','Buffet all-you-can-eat con bevande incluse','Pranzo 12:30 – 15:00','Cena 20:00 – 22:30','Sabato fino alle 23:00','Via della Conciliazione 40 \u00B7 Cagliari'];
   var trks=document.querySelectorAll(".ticker .trk");
   trks.forEach(function(t){
     var frag=document.createDocumentFragment();
@@ -64,16 +64,16 @@ PHOTOS.forEach(function(p,idx){
   var it=document.createElement("button");
   it.type="button"; it.className="g-item reveal";
   it.setAttribute("aria-label","Apri foto "+(idx+1));
-  it.innerHTML='<img src="'+p.t+'" alt="Golden Wok — foto '+(idx+1)+'" loading="lazy" decoding="async"><span class="cap"><b>SHOT '+String(idx+1).padStart(2,"0")+'</b><i>GOLDEN WOK</i></span>';
+  it.innerHTML='<img src="'+p.t+'" alt="Ristorante Il Dragone d\u2019Oro \u2014 foto '+(idx+1)+'" loading="lazy" decoding="async"><span class="cap"><b>SHOT '+String(idx+1).padStart(2,"0")+'</b><i>IL DRAGONE D\u2019ORO</i></span>';
   it.addEventListener("click",function(){ openLB(idx); });
   gal.appendChild(it);
 });
 function openLB(n){
   cur=(n+PHOTOS.length)%PHOTOS.length;
   lbImg.src=PHOTOS[cur].s;
-  lbImg.alt="Golden Wok — foto "+(cur+1);
+  lbImg.alt="Ristorante Il Dragone d\u2019Oro \u2014 foto "+(cur+1);
   lbCap.textContent="SHOT "+String(cur+1).padStart(2,"0")+" / "+String(PHOTOS.length);
-  lbIdx.textContent="GOLDEN WOK · CAGLIARI";
+  lbIdx.textContent="IL DRAGONE D\u2019ORO \u00B7 CAGLIARI";
   lb.classList.add("open");
   lb.setAttribute("aria-hidden","false");
   lastFocus=document.activeElement;
